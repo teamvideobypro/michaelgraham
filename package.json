@@ -1,0 +1,13 @@
+{
+  "name": "michael-graham-squared-away",
+  "version": "1.0.0",
+  "description": "Michael Graham — Squared Away | Executive Keynote Speaker & Author Landing Page",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

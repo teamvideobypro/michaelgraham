@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 156" role="img" aria-label="Michael Graham — Squared Away">
+  <g transform="translate(132, 12)">
+    <rect x="2" y="2" width="52" height="52" fill="none" stroke="#FFFCF5" stroke-opacity="0.28" stroke-width="1.25"/>
+    <path d="M2 16V2H16" fill="none" stroke="#D5AE4F" stroke-width="2.75" stroke-linecap="square"/>
+    <path d="M54 40V54H40" fill="none" stroke="#D5AE4F" stroke-width="2.75" stroke-linecap="square"/>
+    <rect x="22" y="22" width="12" height="12" fill="none" stroke="#FFFCF5" stroke-width="1.5"/>
+    <rect x="26" y="26" width="4" height="4" fill="#D5AE4F"/>
+  </g>
+  <text x="160" y="106" text-anchor="middle" font-family="'Anton', Impact, 'Arial Narrow', sans-serif" font-size="32" letter-spacing="1.4" fill="#FFFCF5">MICHAEL GRAHAM</text>
+  <line x1="88" y1="118" x2="232" y2="118" stroke="#D5AE4F" stroke-opacity="0.65" stroke-width="1.25"/>
+  <text x="160" y="138" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="5" fill="#D8C49B">SQUARED AWAY</text>
+</svg>

@@ -582,45 +582,51 @@ h1 {
 
 .about__grid {
   display: grid;
-  grid-template-columns: minmax(0px, 1fr) minmax(0px, 1.15fr);
-  grid-template-areas: "h h" "img copy";
-  gap: 0px clamp(32px, 5vw, 96px);
+  grid-template-columns: minmax(0px, 1fr) minmax(0px, 1.18fr);
+  grid-template-areas:
+    "title ."
+    "media copy";
+  gap: 0px clamp(36px, 5.5vw, 84px);
+  align-items: start;
 }
 
-.about h2 {
-  grid-area: h;
+.about__title {
+  grid-area: title;
   font-size: clamp(38px, 4.8vw, 76px);
   line-height: 0.95;
-  margin-bottom: clamp(28px, 3.4vw, 52px);
+  margin-bottom: clamp(24px, 3vw, 36px);
+  color: var(--navy);
+}
+
+.about__media {
+  grid-area: media;
 }
 
 .about__img {
-  grid-area: img;
+  margin: 0px;
 }
 
-.about__img picture > img {
+.about__img img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 768 / 962;
   object-fit: cover;
-  object-position: center center;
-  border: 1px solid var(--line);
+  object-position: center top;
+  border: none;
 }
 
 .about__signature {
-  margin-top: clamp(18px, 2.2vw, 28px);
-  padding-top: 0px;
+  margin: clamp(18px, 2.4vw, 28px) 0px 0px 0px;
+  padding: 0px;
 }
 
 .about__signature img {
   display: block;
-  width: auto;
-  max-width: clamp(190px, 18vw, 250px);
+  width: 100%;
+  max-width: 100%;
   height: auto;
-  aspect-ratio: auto;
-  border: none;
-  opacity: 0.94;
+  opacity: 0.96;
   filter: contrast(1.05);
 }
 
@@ -630,30 +636,33 @@ h1 {
 }
 
 .about__lede {
-  font: 400 clamp(24px, 2.3vw, 34px) / 1.12 var(--head);
+  font: 400 clamp(16px, 1.45vw, 20px) / 1.18 var(--head);
   text-transform: uppercase;
   color: var(--navy);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  letter-spacing: 0.01em;
 }
 
 .about__copy p {
-  margin-bottom: 18px;
-  font-size: 17px;
-  line-height: 1.6;
+  margin-bottom: 14px;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--slate);
 }
 
 .cv {
-  margin-top: 28px;
-  border-top: 3px solid var(--navy);
+  margin-top: 22px;
+  border-top: 1px solid rgba(29, 48, 66, 0.35);
 }
 
 .cv li {
-  font: 400 clamp(19px, 1.7vw, 26px) / 1.15 var(--head);
+  font: 400 clamp(17px, 1.4vw, 21px) / 1.1 var(--head);
   text-transform: uppercase;
   color: var(--navy);
-  padding: 12px 0px 12px 32px;
-  border-bottom: 1px solid var(--line);
+  padding: 9px 0px 9px 22px;
+  border-bottom: 1px solid rgba(29, 48, 66, 0.14);
   position: relative;
+  letter-spacing: 0.01em;
 }
 
 .cv li::before {
@@ -661,9 +670,9 @@ h1 {
   position: absolute;
   left: 0px;
   top: 50%;
-  width: 12px;
-  height: 12px;
-  margin-top: -6px;
+  width: 7px;
+  height: 7px;
+  margin-top: -3.5px;
   background: var(--gold);
 }
 
@@ -1197,14 +1206,20 @@ h1 {
   }
   .about__grid {
     grid-template-columns: minmax(0px, 1fr);
-    grid-template-areas: "h" "img" "copy";
+    grid-template-areas:
+      "title"
+      "media"
+      "copy";
   }
-  .about h2 {
+  .about__title {
     font-size: clamp(38px, 4.8vw, 76px);
+    margin-bottom: 20px;
+  }
+  .about__media {
     margin-bottom: 24px;
   }
   .about__copy {
-    padding-top: 24px;
+    padding-top: 0px;
   }
   .books__grid {
     grid-template-columns: 1fr;

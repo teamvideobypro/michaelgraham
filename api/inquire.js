@@ -17,7 +17,9 @@ const ALLOWED_ENGAGEMENT_TYPES = new Set([
   'Keynote',
   'Executive Workshop',
   'Podcast / Media Interview',
+  'Podcast or interview',
   'Custom Engagement',
+  'Other',
 ]);
 
 function verifyToken(token) {
@@ -72,13 +74,13 @@ function sanitizeText(val, maxLen) {
 
 function validateInquiry(body) {
   const errors = {};
-  const nameOrg = sanitizeText(body.nameOrg, 140);
+  const nameOrg = sanitizeText(body.nameOrg || body.name_org, 140);
   const email = sanitizeText(body.email, 180).toLowerCase();
-  const engagementType = sanitizeText(body.engagementType, 60);
-  const eventDate = sanitizeText(body.eventDate, 100);
+  const engagementType = sanitizeText(body.engagementType || body.engagement_type, 60);
+  const eventDate = sanitizeText(body.eventDate || body.timeframe, 100);
   const location = sanitizeText(body.location, 140);
   const budget = sanitizeText(body.budget, 80);
-  const audienceGoals = sanitizeText(body.audienceGoals, 2000);
+  const audienceGoals = sanitizeText(body.audienceGoals || body.goals, 2000);
   const honeypot = typeof body.company_website === 'string' ? body.company_website.trim() : '';
 
   if (honeypot.length > 0) {
@@ -101,11 +103,11 @@ function validateInquiry(body) {
   if (location.length < 2) {
     errors.location = 'Specify the event city/venue or Virtual.';
   }
-  if (budget.length < 2) {
-    errors.budget = 'Please select or enter an estimated event budget range.';
+  if (budget.length > 0 && budget.length < 2) {
+    errors.budget = 'Please enter an estimated event budget range.';
   }
-  if (audienceGoals.length < 15) {
-    errors.audienceGoals = 'Share at least a brief sentence on your audience and event goals (15+ characters).';
+  if (audienceGoals.length < 5) {
+    errors.audienceGoals = 'Share at least a brief note on your audience and event goals.';
   }
 
   return {

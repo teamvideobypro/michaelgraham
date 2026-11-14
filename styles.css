@@ -598,7 +598,7 @@ h1 {
   grid-area: img;
 }
 
-.about__img img {
+.about__img picture > img {
   display: block;
   width: 100%;
   height: auto;
@@ -609,29 +609,31 @@ h1 {
 }
 
 .about__signature {
-  margin-top: clamp(28px, 3.5vw, 44px);
-  padding-top: 8px;
+  margin-top: clamp(18px, 2.2vw, 28px);
+  padding-top: 0px;
 }
 
 .about__signature img {
   display: block;
   width: auto;
-  max-width: clamp(200px, 22vw, 280px);
+  max-width: clamp(190px, 18vw, 250px);
   height: auto;
+  aspect-ratio: auto;
+  border: none;
   opacity: 0.94;
   filter: contrast(1.05);
 }
 
 .about__copy {
   grid-area: copy;
-  padding-top: clamp(20px, 3vw, 40px);
+  padding-top: 0px;
 }
 
 .about__lede {
-  font: 400 clamp(26px, 2.5vw, 38px) / 1.12 var(--head);
+  font: 400 clamp(24px, 2.3vw, 34px) / 1.12 var(--head);
   text-transform: uppercase;
   color: var(--navy);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .about__copy p {
@@ -641,15 +643,15 @@ h1 {
 }
 
 .cv {
-  margin-top: 36px;
+  margin-top: 28px;
   border-top: 3px solid var(--navy);
 }
 
 .cv li {
-  font: 400 clamp(20px, 1.8vw, 28px) / 1.15 var(--head);
+  font: 400 clamp(19px, 1.7vw, 26px) / 1.15 var(--head);
   text-transform: uppercase;
   color: var(--navy);
-  padding: 14px 0px 14px 34px;
+  padding: 12px 0px 12px 32px;
   border-bottom: 1px solid var(--line);
   position: relative;
 }
@@ -1202,7 +1204,7 @@ h1 {
     margin-bottom: 24px;
   }
   .about__copy {
-    padding-top: 32px;
+    padding-top: 24px;
   }
   .books__grid {
     grid-template-columns: 1fr;

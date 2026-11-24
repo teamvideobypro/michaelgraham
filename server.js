@@ -105,47 +105,35 @@ function sanitizeText(val, maxLen) {
 
 function validateInquiry(body) {
   const errors = {};
-  const nameOrg = sanitizeText(body.nameOrg || body.name_org, 140);
+  const name = sanitizeText(body.name || body.nameOrg || body.name_org, 140);
   const email = sanitizeText(body.email, 180).toLowerCase();
-  const engagementType = sanitizeText(body.engagementType || body.engagement_type, 60);
-  const eventDate = sanitizeText(body.eventDate || body.timeframe, 100);
-  const location = sanitizeText(body.location, 140);
-  const budget = sanitizeText(body.budget, 80);
-  const audienceGoals = sanitizeText(body.audienceGoals || body.goals, 2000);
+  const subject = sanitizeText(body.subject || body.engagementType || body.engagement_type, 200);
+  const message = sanitizeText(body.message || body.audienceGoals || body.goals, 4000);
   const honeypot = typeof body.company_website === 'string' ? body.company_website.trim() : '';
 
   if (honeypot.length > 0) {
     return { spam: true, errors: { form: 'Automated submission rejected.' } };
   }
 
-  if (nameOrg.length < 2) {
-    errors.nameOrg = 'Please provide your full name and organization.';
+  if (name.length < 2) {
+    errors.name = 'Please provide your full name.';
   }
   const emailRegex = /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9-]+(?:\.[a-z0-9-]+)+$/i;
   if (!emailRegex.test(email)) {
     errors.email = 'Enter a valid corporate or personal email address.';
   }
-  if (!ALLOWED_ENGAGEMENT_TYPES.has(engagementType)) {
-    errors.engagementType = 'Please choose an engagement format.';
+  if (subject.length < 2) {
+    errors.subject = 'Please provide an inquiry subject.';
   }
-  if (eventDate.length < 2) {
-    errors.eventDate = 'Provide a target event date or timeframe.';
-  }
-  if (location.length < 2) {
-    errors.location = 'Specify the event city/venue or Virtual.';
-  }
-  if (budget.length > 0 && budget.length < 2) {
-    errors.budget = 'Please enter an estimated event budget range.';
-  }
-  if (audienceGoals.length < 5) {
-    errors.audienceGoals = 'Share at least a brief note on your audience and event goals.';
+  if (message.length < 3) {
+    errors.message = 'Please share a brief message regarding your event or inquiry.';
   }
 
   return {
     spam: false,
     valid: Object.keys(errors).length === 0,
     errors,
-    cleaned: { nameOrg, email, engagementType, eventDate, location, budget, audienceGoals },
+    cleaned: { name, email, subject, message },
   };
 }
 

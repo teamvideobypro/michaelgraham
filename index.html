@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=EB+Garamond:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="/assets/img/hero-blue-jacket.webp" type="image/webp">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=3.0">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -264,7 +264,7 @@
     </section>
 
     <!-- SECTION: BOOKS & IDEAS -->
-    <section class="books" id="books" aria-labelledby="books-h">
+    <section class="books" id="books" aria-labelledby="books-h" style="background-color: #FFFFFF !important;">
       <div class="wrap">
         <h2 id="books-h">Books</h2>
         <div class="books__grid">
@@ -350,7 +350,7 @@
         <h2 id="inq-h">Invite Michael to Your Event</h2>
         <div class="inquire__grid">
           <p class="inquire__intro">
-            Share a few details about your event, timeframe, and audience goals below. Michael’s executive team will follow up directly via email to coordinate details and next steps. You can also reach out directly via email at <a href="mailto:inquiries@michaelgraham.com" class="inquire__mailto">inquiries@michaelgraham.com</a>.
+            Share your inquiry details below. Michael’s executive team will follow up directly via email to coordinate details and next steps. You can also reach out directly via email at <a href="mailto:inquiries@michaelgraham.com" class="inquire__mailto">inquiries@michaelgraham.com</a>.
           </p>
 
           <div>
@@ -362,45 +362,25 @@
                 <label for="company_website">Leave this field blank</label>
                 <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off" value="">
               </div>
+
               <div class="f">
-                <label for="g-name">Name and organization <span class="req" aria-hidden="true">*</span></label>
-                <input id="g-name" name="name_org" autocomplete="organization" placeholder="Your name &amp; organization" required>
+                <label for="g-name">Name <span class="req" aria-hidden="true">*</span></label>
+                <input id="g-name" name="name" autocomplete="name" placeholder="Your full name" required>
               </div>
 
               <div class="f">
-                <label for="g-email">Email address <span class="req" aria-hidden="true">*</span></label>
+                <label for="g-email">Email <span class="req" aria-hidden="true">*</span></label>
                 <input id="g-email" name="email" type="email" autocomplete="email" placeholder="you@organization.com" required>
               </div>
 
-              <div class="f">
-                <label for="g-type">Engagement type <span class="req" aria-hidden="true">*</span></label>
-                <select id="g-type" name="engagement_type" required>
-                  <option value="" disabled selected>Select format...</option>
-                  <option value="Keynote">Keynote</option>
-                  <option value="Executive Workshop">Executive Workshop</option>
-                  <option value="Podcast or interview">Podcast or interview</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div class="f">
-                <label for="g-date">Event date or timeframe <span class="req" aria-hidden="true">*</span></label>
-                <input id="g-date" name="timeframe" placeholder="e.g., March 2027 or Q2 2027" required>
-              </div>
-
-              <div class="f">
-                <label for="g-loc">Location or virtual format <span class="req" aria-hidden="true">*</span></label>
-                <input id="g-loc" name="location" placeholder="e.g., Dallas, TX or Virtual" required>
-              </div>
-
-              <div class="f">
-                <label for="g-budget">Estimated budget</label>
-                <input id="g-budget" name="budget" placeholder="Allocated speaker/event budget">
+              <div class="f f--full">
+                <label for="g-subject">Subject <span class="req" aria-hidden="true">*</span></label>
+                <input id="g-subject" name="subject" placeholder="Speaking Inquiry / Event Topic" required>
               </div>
 
               <div class="f f--full">
-                <label for="g-goals">Short description of audience and goals <span class="req" aria-hidden="true">*</span></label>
-                <textarea id="g-goals" name="goals" rows="4" placeholder="Audience size, leadership level, and desired outcome..." required></textarea>
+                <label for="g-message">Message <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="g-message" name="message" rows="5" placeholder="Tell us about your event, audience, or questions..." required></textarea>
               </div>
 
               <div class="f--full form__end">
@@ -496,6 +476,6 @@
     </div>
   </footer>
 
-  <script defer src="/app.js"></script>
+  <script defer src="/app.js?v=3.0"></script>
 </body>
 </html>

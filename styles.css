@@ -714,7 +714,8 @@ h1 {
    -------------------------------------------------------------------------- */
 
 .books {
-  background: #FFFFFF;
+  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
   padding: clamp(52px, 6.5vw, 96px) 0px;
   border-top: 1px solid var(--line);
 }
@@ -754,6 +755,7 @@ h1 {
 
 .book h3 {
   font-size: clamp(24px, 2.4vw, 36px);
+  color: var(--navy);
 }
 
 .book__sub {
@@ -765,7 +767,7 @@ h1 {
 }
 
 .book p {
-  color: var(--navy);
+  color: #2D3E50;
   font-size: 16px;
   line-height: 1.55;
 }

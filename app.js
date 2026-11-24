@@ -122,20 +122,29 @@
       }
 
       const formData = new FormData(inquireForm);
+      const name = (formData.get('name') || formData.get('name_org') || '').trim();
+      const email = (formData.get('email') || '').trim();
+      const subject = (formData.get('subject') || '').trim();
+      const message = (formData.get('message') || '').trim();
+
       const payload = {
         formToken: formData.get('formToken') || (formTokenInput ? formTokenInput.value : ''),
         company_website: formData.get('company_website') || '',
-        name_org: formData.get('name_org') || '',
-        nameOrg: formData.get('name_org') || '',
-        email: formData.get('email') || '',
-        engagement_type: formData.get('engagement_type') || '',
-        engagementType: formData.get('engagement_type') || '',
-        timeframe: formData.get('timeframe') || '',
-        eventDate: formData.get('timeframe') || '',
-        location: formData.get('location') || '',
-        budget: formData.get('budget') || '',
-        goals: formData.get('goals') || '',
-        audienceGoals: formData.get('goals') || '',
+        name,
+        email,
+        subject,
+        message,
+        // Backwards compatibility aliases
+        name_org: name,
+        nameOrg: name,
+        engagement_type: subject,
+        engagementType: subject,
+        timeframe: 'Standard Email Inquiry',
+        eventDate: 'Standard Email Inquiry',
+        location: 'Direct Inquiry',
+        budget: 'Not specified',
+        goals: message,
+        audienceGoals: message,
       };
 
       try {
@@ -152,7 +161,7 @@
         if (inquiryStatus) {
           inquiryStatus.innerHTML = `
             <h3>Inquiry Received</h3>
-            <p>Thank you for reaching out. Michael’s executive team has received your event details and will follow up directly via email to your inbox.</p>
+            <p>Thank you for reaching out. Michael’s executive team has received your message and will follow up directly via email to your inbox.</p>
           `;
           inquiryStatus.removeAttribute('hidden');
           inquiryStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });

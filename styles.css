@@ -734,7 +734,8 @@ h1 {
 }
 
 .book__stage {
-  background: var(--navy);
+  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
   padding: clamp(32px, 5vw, 72px);
   display: flex;
   justify-content: center;
@@ -742,7 +743,7 @@ h1 {
   margin-bottom: 28px;
   min-height: 380px;
   border: 1px solid rgba(29, 48, 66, 0.12);
-  box-shadow: 0 16px 36px rgba(20, 34, 47, 0.14);
+  box-shadow: 0 16px 36px rgba(20, 34, 47, 0.08);
 }
 
 .book__stage img,
@@ -750,7 +751,7 @@ h1 {
   width: min(300px, 70%);
   height: auto;
   aspect-ratio: 800 / 1132;
-  box-shadow: rgba(0, 0, 0, 0.7) 0px 26px 40px -24px;
+  box-shadow: 0 20px 40px -15px rgba(20, 34, 47, 0.35);
 }
 
 .book h3 {

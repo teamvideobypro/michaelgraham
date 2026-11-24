@@ -152,7 +152,7 @@
         if (inquiryStatus) {
           inquiryStatus.innerHTML = `
             <h3>Inquiry Received</h3>
-            <p>Thank you for reaching out. Michael’s executive team has received your event details and will follow up promptly to discuss calendar availability and alignment.</p>
+            <p>Thank you for reaching out. Michael’s executive team has received your event details and will follow up directly via email to your inbox.</p>
           `;
           inquiryStatus.removeAttribute('hidden');
           inquiryStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -163,7 +163,7 @@
         if (inquiryStatus) {
           inquiryStatus.innerHTML = `
             <h3>Inquiry Received</h3>
-            <p>Thank you for reaching out. Michael’s team will follow up promptly to confirm calendar availability.</p>
+            <p>Thank you for reaching out. Michael’s team will follow up directly via email.</p>
           `;
           inquiryStatus.removeAttribute('hidden');
           inquiryStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });

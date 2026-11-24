@@ -746,7 +746,20 @@ h1 {
   box-shadow: 0 16px 36px rgba(20, 34, 47, 0.08);
 }
 
-.book__stage img,
+.book__stage picture {
+  display: contents;
+}
+
+.book__stage img {
+  width: min(300px, 70%);
+  height: auto;
+  aspect-ratio: auto;
+  box-shadow: none !important;
+  filter: none !important;
+  background: transparent !important;
+  border: none !important;
+}
+
 .book__stage .ph--cover {
   width: min(300px, 70%);
   height: auto;

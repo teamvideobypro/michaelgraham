@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=EB+Garamond:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="/assets/img/hero-blue-jacket.webp" type="image/webp">
-  <link rel="stylesheet" href="/styles.css?v=3.2">
+  <link rel="stylesheet" href="/styles.css?v=3.3">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -275,6 +275,7 @@
                 <img
                   src="/assets/img/book-united-traits.png"
                   alt="Cover of United Traits of America: 50 Principles for an Exceptional Life by Michael A. Graham"
+                  class="book__img--united-traits"
                   width="680"
                   height="901"
                   loading="lazy"
@@ -299,10 +300,17 @@
 
           <article class="book">
             <div class="book__stage" style="background-color: #FFFFFF !important;">
-              <div class="ph--cover" role="img" aria-label="Squared Away book cover preview">
-                <span>Squared<br>Away</span>
-                <small>Forthcoming Edition &middot; Pre-Order Below</small>
-              </div>
+              <picture>
+                <source type="image/webp" srcset="/assets/img/book-squared-away.webp">
+                <img
+                  src="/assets/img/book-squared-away.png"
+                  alt="Cover of Squared Away: A Soldier’s Guide to an Exceptional Life by Michael A. Graham"
+                  class="book__img--squared-away"
+                  width="682"
+                  height="1024"
+                  loading="lazy"
+                >
+              </picture>
             </div>
             <h3>Squared Away</h3>
             <p class="book__sub">A Soldier’s Guide to an Exceptional Life</p>

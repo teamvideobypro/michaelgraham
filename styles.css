@@ -751,8 +751,12 @@ h1 {
 }
 
 .book__stage img {
-  width: min(300px, 70%);
   height: auto;
+  display: block;
+}
+
+.book__img--united-traits {
+  width: min(300px, 70%);
   aspect-ratio: auto;
   box-shadow: none !important;
   filter: none !important;
@@ -760,11 +764,11 @@ h1 {
   border: none !important;
 }
 
-.book__stage .ph--cover {
-  width: min(300px, 70%);
-  height: auto;
-  aspect-ratio: 800 / 1132;
+.book__img--squared-away {
+  width: min(252px, 62%);
+  aspect-ratio: 682 / 1024;
   box-shadow: 0 20px 40px -15px rgba(20, 34, 47, 0.35);
+  border: 1px solid rgba(29, 48, 66, 0.1);
 }
 
 .book h3 {
